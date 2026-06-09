@@ -111,7 +111,8 @@ function WelcomePage() {
 
         const user = await response.json()
         setUsername(user.username)
-      } catch {
+      } catch (loadError) {
+        console.error(loadError)
         sessionStorage.removeItem(TOKEN_KEY)
         navigate('/login', { replace: true })
       }
