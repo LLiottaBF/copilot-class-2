@@ -99,7 +99,7 @@ function WelcomePage() {
 
       try {
         const authHeaders = new Headers()
-        authHeaders.set('Authorization', ['Bearer', token].join(' '))
+        authHeaders.set('Authorization', 'Bearer ' + token)
 
         const response = await fetch(`${API_URL}/me`, {
           headers: authHeaders,
